@@ -1,6 +1,7 @@
 name: Nightly Release
 
 on:
+  workflow_dispatch:
   schedule:
     - cron:  '0 0 * * ?'
 
@@ -48,9 +49,9 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os:       [ubuntu-22.04, ubuntu-24.04]
-        mode:     [newlib, linux, musl, uclibc]
-        target:   [rv32gc-ilp32d, rv64gc-lp64d]
+        os:       [ubuntu-24.04]
+        mode:     [newlib]
+        target:   [rv64gcv_zvfh-lp64d]
         compiler: [gcc, llvm]
         exclude:
           - mode: musl
