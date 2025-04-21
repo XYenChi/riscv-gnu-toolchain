@@ -51,7 +51,7 @@ jobs:
       matrix:
         os:       [ubuntu-24.04]
         mode:     [newlib]
-        target:   [rv64gcv_zvfh-lp64d]
+        target:   [rv64gcv_zfh_zvfh-lp64d]
         compiler: [gcc, llvm]
         exclude:
           - mode: musl
